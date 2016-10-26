@@ -7,9 +7,8 @@ cd updated-result/
 # 前Task出力結果をGitのcommit用のGit作業ディレクトリに移動する
 mv -f ../out/* ./
 
-git config --global user.email "makingx at gmail dot com"
-git config --global user.name "Toshiaki Maki"
+git config --global user.email "bradex@gmail.com"
+git config --global user.name "bradex"
 
 git add -A
 git commit -m "Update result log"
-
