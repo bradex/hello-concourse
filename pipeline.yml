@@ -7,7 +7,7 @@ resources:
 - name: result
   type: git
   source:
-    uri: git@gist.github.com/bradex/9cb14f67f9765c3ae2f70cdda6759915.git
+    uri: https://gist.github.com/9cb14f67f9765c3ae2f70cdda6759915.git
     private_key: {{github-private-key}}
     branch: master
 
