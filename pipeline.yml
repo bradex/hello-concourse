@@ -4,7 +4,7 @@ resources:
   type: git
   source:
     uri: https://github.com/bradex/hello-concourse.git
-- name: result
+- name: gist
   type: git
   source:
     uri: git@gist.github.com:9cb14f67f9765c3ae2f70cdda6759915.git
@@ -17,7 +17,7 @@ jobs:
   plan:
   - get: hello
     trigger: true
-  - get: result
+  - get: gist
   - task: run-hello
     file: hello/hello.yml
   - task: commit-log

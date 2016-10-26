@@ -6,7 +6,7 @@ image_resource:
     repository: getourneau/alpine-bash-git
 inputs:
   - name: hello # ソースコード
-  - name: result # clone用のGit
+  - name: gist # clone用のGit
   - name: out # 全タスクの出力を入力にする
 outputs:
   - name: updated-result # commit用のGitリポジトリ
