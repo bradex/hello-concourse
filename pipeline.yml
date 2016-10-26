@@ -1,18 +1,27 @@
 ---
-# Resourceの定義
 resources:
-# Git Resourceの定義
 - name: hello
   type: git
   source:
     uri: https://github.com/bradex/hello-concourse.git
+- name: result
+  type: git
+  source:
+    uri: git@gist.github.com/bradex/9cb14f67f9765c3ae2f70cdda6759915.git
+    private_key: {{github-private-key}}
+    branch: master
 
-# Jobの定義
 jobs:
-- name: hello-job
-  public: true # UI上でJobの結果をログイン不要で公開するかどうか
+- name: job-hello
+  public: true
   plan:
   - get: hello
-    trigger: true # Resourceに変更があれば自動でジョブを実行するかどうか
+    trigger: true
+  - get: result
   - task: run-hello
     file: hello/hello.yml
+  - task: commit-log
+    file: hello/commit-log.yml
+  - put: result
+    params:
+      repository: updated-result
