@@ -30,7 +30,7 @@ jobs:
   public: true
   plan:
   - get: hello
-  - get: result
+  - get: gist
     trigger: true
     passed: [ job-hello ]
   - task: show-result
