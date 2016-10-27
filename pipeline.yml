@@ -25,3 +25,13 @@ jobs:
   - put: gist
     params:
       repository: updated-result
+
+- name: job-show-result # 新規ジョブ
+  public: true
+  plan:
+  - get: hello
+  - get: result
+    trigger: true
+    passed: [ job-hello ]
+  - task: show-result
+    file: hello/show-result.yml
