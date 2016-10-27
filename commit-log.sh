@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # clone用のGitをcloneしてcommit用のGitリポジトリを作成する
-git clone result updated-result
+git clone gist updated-result
 
 cd updated-result/
 # 前Task出力結果をGitのcommit用のGit作業ディレクトリに移動する
